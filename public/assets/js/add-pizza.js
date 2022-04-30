@@ -59,11 +59,12 @@ const handlePizzaSubmit = (event) => {
    })
       .then((response) => response.json())
       .then((postResponse) => {
-         alert("Pizza created successfully!");
          console.log(postResponse);
       })
       .catch((err) => {
          console.log(err);
+         // when user tries to submit pizza without an internet connection, the data will be stored in the new_pizza object
+         saveRecord(formData);
       });
 };
 
