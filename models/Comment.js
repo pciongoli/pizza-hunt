@@ -10,9 +10,12 @@ const ReplySchema = new Schema(
       },
       replyBody: {
          type: String,
+         required: true,
       },
       writtenBy: {
          type: String,
+         required: true,
+         trim: true,
       },
       createdAt: {
          type: Date,
@@ -31,9 +34,12 @@ const CommentSchema = new Schema(
    {
       writtenBy: {
          type: String,
+         // require this field
+         required: true,
       },
       commentBody: {
          type: String,
+         required: true,
       },
       createdAt: {
          type: Date,
